@@ -12,6 +12,10 @@
 		B138B4091DB9C18900029DF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B138B4071DB9C18900029DF5 /* Main.storyboard */; };
 		B138B40B1DB9C18900029DF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B138B40A1DB9C18900029DF5 /* Assets.xcassets */; };
 		B138B40E1DB9C18900029DF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B138B40C1DB9C18900029DF5 /* LaunchScreen.storyboard */; };
+		B138B4171DB9C4A700029DF5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B138B4151DB9C4A700029DF5 /* FBSDKCoreKit.framework */; };
+		B138B4181DB9C4A700029DF5 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B138B4161DB9C4A700029DF5 /* FBSDKLoginKit.framework */; };
+		B138B41F1DB9DC4700029DF5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B138B41D1DB9DC4700029DF5 /* Bolts.framework */; };
+		B138B4201DB9DC4700029DF5 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B138B41E1DB9DC4700029DF5 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,11 @@
 		B138B40A1DB9C18900029DF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B138B40D1DB9C18900029DF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B138B40F1DB9C18900029DF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B138B4151DB9C4A700029DF5 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		B138B4161DB9C4A700029DF5 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B138B4191DB9C83D00029DF5 /* Connect2Pace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Connect2Pace-Bridging-Header.h"; sourceTree = "<group>"; };
+		B138B41D1DB9DC4700029DF5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B138B41E1DB9DC4700029DF5 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +38,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B138B4201DB9DC4700029DF5 /* FBSDKShareKit.framework in Frameworks */,
+				B138B41F1DB9DC4700029DF5 /* Bolts.framework in Frameworks */,
+				B138B4181DB9C4A700029DF5 /* FBSDKLoginKit.framework in Frameworks */,
+				B138B4171DB9C4A700029DF5 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +53,10 @@
 			children = (
 				B138B4021DB9C18900029DF5 /* Connect2Pace */,
 				B138B4011DB9C18900029DF5 /* Products */,
+				B138B41D1DB9DC4700029DF5 /* Bolts.framework */,
+				B138B41E1DB9DC4700029DF5 /* FBSDKShareKit.framework */,
+				B138B4151DB9C4A700029DF5 /* FBSDKCoreKit.framework */,
+				B138B4161DB9C4A700029DF5 /* FBSDKLoginKit.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +77,7 @@
 				B138B40A1DB9C18900029DF5 /* Assets.xcassets */,
 				B138B40C1DB9C18900029DF5 /* LaunchScreen.storyboard */,
 				B138B40F1DB9C18900029DF5 /* Info.plist */,
+				B138B4191DB9C83D00029DF5 /* Connect2Pace-Bridging-Header.h */,
 			);
 			path = Connect2Pace;
 			sourceTree = "<group>";
@@ -97,6 +115,7 @@
 					B138B3FF1DB9C18900029DF5 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = S6SNTXX99S;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -261,11 +280,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = S6SNTXX99S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Connect2Pace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ejayzee.Connect2Pace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Connect2Pace/Connect2Pace-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -274,11 +300,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = S6SNTXX99S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Connect2Pace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ejayzee.Connect2Pace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Connect2Pace/Connect2Pace-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
