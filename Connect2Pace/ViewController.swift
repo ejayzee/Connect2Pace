@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+    
     let loginButton: FBSDKLoginButton = {
         let button = FBSDKLoginButton()
         button.readPermissions = ["email"]
@@ -18,12 +18,30 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         view.addSubview(loginButton)
         loginButton.center = view.center
+        loginButton.delegate = self
+        fetchProfile()
+    }
+    
+    func fetchProfile() {
+        print("fetch profile")
         
     }
-
-
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        print("completed login")
+        fetchProfile()
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
+    
+    func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
+        return true
+    }
+    
 }
 
